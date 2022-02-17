@@ -1,0 +1,20 @@
+{
+  "name": "wol-helper",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hehongbo/wol-helper.git"
+  },
+  "author": "Hongbo He",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hehongbo/wol-helper/issues"
+  },
+  "homepage": "https://github.com/hehongbo/wol-helper#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "joi": "^17.6.0"
+  }
+}
