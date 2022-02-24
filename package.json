@@ -7,6 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/hehongbo/wol-helper.git"
   },
+  "files": [
+    "index.mjs",
+    "lib"
+  ],
+  "bin": {
+    "wol-helper": "index.mjs"
+  },
   "author": "Hongbo He",
   "license": "MIT",
   "bugs": {
@@ -14,7 +21,7 @@
   },
   "homepage": "https://github.com/hehongbo/wol-helper#readme",
   "dependencies": {
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "joi": "^17.6.0"
   }
 }
