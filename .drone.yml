@@ -1,0 +1,73 @@
+kind: pipeline
+name: Publish_to_NPM
+type: docker
+
+trigger:
+  event:
+    - tag
+
+steps:
+- name: publish
+  image: node:alpine
+  environment:
+    NPM_ACCESS_TOKEN:
+      from_secret: NPM_ACCESS_TOKEN
+  commands:
+  - npm set //registry.npmjs.org/:_authToken $NPM_ACCESS_TOKEN
+  - npm publish
+
+---
+
+kind: pipeline
+name: Publish_to_DockerHub
+type: docker
+
+trigger:
+  event:
+  - tag
+
+steps:
+- name: prepare
+  image: docker:20
+  volumes:
+  - name: docker.sock
+    path: /var/run/docker.sock
+  commands:
+  - docker pull node:alpine
+- name: build
+  image: docker:20
+  volumes:
+  - name: docker.sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKERHUB_USERNAME:
+      from_secret: DOCKERHUB_USERNAME
+  commands:
+  - |
+    echo '
+      FROM node:alpine
+      RUN npm install -g wol-helper
+      CMD ["wol-helper"]
+    ' | docker build -t $DOCKERHUB_USERNAME/wol-helper -
+- name: push
+  image: docker:20
+  volumes:
+  - name: docker.sock
+    path: /var/run/docker.sock
+  environment:
+    DOCKERHUB_USERNAME:
+      from_secret: DOCKERHUB_USERNAME
+    DOCKERHUB_PASSWORD:
+      from_secret: DOCKERHUB_PASSWORD
+  commands:
+  - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+  - docker push $DOCKERHUB_USERNAME/wol-helper
+  - docker rmi $DOCKERHUB_USERNAME/wol-helper
+
+volumes:
+- name: docker.sock
+  host:
+    path: /var/run/docker.sock
+
+depends_on:
+- Publish_to_NPM
