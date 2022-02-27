@@ -1,6 +1,6 @@
 {
   "name": "wol-helper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.mjs",
   "repository": {
@@ -9,7 +9,8 @@
   },
   "files": [
     "index.mjs",
-    "lib"
+    "lib",
+    "front"
   ],
   "bin": {
     "wol-helper": "index.mjs"
