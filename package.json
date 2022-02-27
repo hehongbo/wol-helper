@@ -1,7 +1,7 @@
 {
   "name": "wol-helper",
   "version": "0.1.0",
-  "description": "",
+  "description": "Perform Wake-on-LAN remotely with a web interface.",
   "main": "index.mjs",
   "repository": {
     "type": "git",
@@ -15,6 +15,10 @@
   "bin": {
     "wol-helper": "index.mjs"
   },
+  "keywords": [
+    "wol",
+    "wake-on-lan"
+  ],
   "author": "Hongbo He",
   "license": "MIT",
   "bugs": {
