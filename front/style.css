@@ -1,3 +1,19 @@
 html {
     font-family: sans-serif;
 }
+
+table#machine-list:not([data-operation-status="wake"]) button.btn-wake,
+table#machine-list:not([data-operation-status="edit"]) button.btn-edit,
+table#machine-list:not([data-operation-status="item-edit"]) button.btn-item-edit,
+table#machine-list:not([data-operation-status="item-edit"]) > thead span.required {
+    display: none;
+}
+
+table#machine-list > thead span.required {
+    color: red
+}
+
+a.operation-link.not-available {
+    color: gray;
+    cursor: not-allowed;
+}
