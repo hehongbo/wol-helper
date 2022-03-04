@@ -128,6 +128,7 @@ function infoInput(editMachineWithMACAddress) {
                 }
             });
             row.innerHTML = "";
+            row.classList.add("info-input");
             macAddrInput.value = addSeparators(machineInfo.macAddress);
             if (machineInfo.name) {
                 nameInput.value = machineInfo.name;
