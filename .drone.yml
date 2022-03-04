@@ -48,8 +48,8 @@ steps:
       FROM node:alpine
       RUN set -eux; \
           npm install -g wol-helper; \
-          mkdir -p /usr/local/etc
-      CMD ["wol-helper", "/usr/local/etc/wol-helper.json"]
+          mkdir -p /usr/local/etc/wol-helper
+      CMD ["wol-helper", "/usr/local/etc/wol-helper/config.json"]
     ' | docker build -t $DOCKERHUB_USERNAME/wol-helper -
 - name: push
   image: docker:20

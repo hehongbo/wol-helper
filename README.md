@@ -34,7 +34,7 @@ For users who want to run it with Docker, remember to use the host network:
 docker run -d \
     --name wol-helper \
     --net host \
-    -v /path/to/config.json:/usr/local/etc/wol-helper.json \
+    -v /your_path/wol-helper:/usr/local/etc/wol-helper \
     --restart unless-stopped \
     hehongbo/wol-helper
 ```
