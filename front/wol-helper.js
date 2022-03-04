@@ -206,7 +206,7 @@ function refresh() {
             if (machine.name) {
                 nameCell.innerHTML = machine.name;
             } else {
-                nameCell.innerHTML = "Unknown";
+                nameCell.innerHTML = "- Empty -";
                 nameCell.classList.add("no-data");
             }
             tableRow.appendChild(nameCell);

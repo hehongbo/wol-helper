@@ -1,6 +1,6 @@
 {
   "name": "wol-helper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Perform Wake-on-LAN remotely with a web interface.",
   "main": "index.mjs",
   "repository": {

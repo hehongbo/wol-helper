@@ -9,6 +9,10 @@
 </head>
 <body>
 <h1>Wake-on-LAN Helper</h1>
+<div id="machine-list-operations">
+    <a class="operation-link" id="op-add" href="javascript:addMachine()">Add</a>
+    <a class="operation-link" id="op-edit" href="javascript:toggleEdit()">Edit</a>
+</div>
 <table id="machine-list" data-operation-status="wake">
     <thead>
     <tr>
@@ -21,10 +25,6 @@
     <tbody>
     </tbody>
 </table>
-<div id="machine-list-operations">
-    <a class="operation-link" id="op-add" href="javascript:addMachine()">Add</a>
-    <a class="operation-link" id="op-edit" href="javascript:toggleEdit()">Edit</a>
-</div>
 <script src="wol-helper.js"></script>
 </body>
 </html>

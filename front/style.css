@@ -1,5 +1,90 @@
 html {
     font-family: sans-serif;
+    background-color: #F9F9F9;
+}
+
+h1 {
+    width: 100%;
+    max-width: 900px;
+    margin: 3rem auto;
+    font-size: 1.8rem;
+}
+
+div#machine-list-operations {
+    text-align: right;
+}
+
+table#machine-list {
+    background-color: white;
+    margin: 0.5rem auto;
+    width: 100%;
+    max-width: 900px;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table#machine-list > thead th:nth-child(1),
+table#machine-list > thead th:nth-child(4) {
+    width: 20%;
+}
+
+table#machine-list > thead th:nth-child(2),
+table#machine-list > thead th:nth-child(3) {
+    width: 30%;
+}
+
+table#machine-list > thead th {
+    border-bottom: 2px solid #E0E0E0;
+}
+
+table#machine-list > tbody > tr:not(:last-child) > th,
+table#machine-list > tbody > tr:not(:last-child) > td {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+table#machine-list th,
+table#machine-list td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table#machine-list th:first-child {
+    padding-left: 1.5rem;
+}
+
+table#machine-list th:last-child {
+    padding-right: 1.5rem;
+}
+
+table#machine-list tr.info-input > td:first-child {
+    padding-left: 1.5rem;
+}
+
+table#machine-list > thead > tr {
+    text-transform: uppercase;
+    height: 3.5rem;
+    font-size: 0.8rem;
+    color: #808080;
+}
+
+table#machine-list > tbody > tr {
+    height: 2.8rem;
+}
+
+table#machine-list > tbody th {
+    font-size: 0.9rem;
+}
+
+table#machine-list > tbody td:nth-child(2),
+table#machine-list > tbody td:nth-child(3) {
+    font-family: monospace;
+}
+
+table#machine-list th.no-data,
+table#machine-list td.no-data {
+    color: #A4A4A4;
+    font-weight: normal;
 }
 
 table#machine-list:not([data-operation-status="wake"]) button.btn-wake,
@@ -10,10 +95,41 @@ table#machine-list:not([data-operation-status="item-edit"]) > thead span.require
 }
 
 table#machine-list > thead span.required {
-    color: red
+    color: #F31B08;
+    font-family: monospace;
+}
+
+table#machine-list button:not(:last-of-type) {
+    margin: 0 0.3rem 0 0;
+}
+
+div#machine-list-operations {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+a.operation-link {
+    color: #2A2A2A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.operation-link:not(:last-child) {
+    margin-right: 0.3rem;
 }
 
 a.operation-link.not-available {
-    color: gray;
+    color: #A2A2A2;
     cursor: not-allowed;
+}
+
+@media screen and (pointer: fine) {
+    table#machine-list > tbody tr {
+        transition: background-color 50ms linear;
+    }
+
+    table#machine-list > tbody tr:not(.info-input):hover {
+        background-color: #FAFAFA;
+    }
 }
