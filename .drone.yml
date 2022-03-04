@@ -46,7 +46,9 @@ steps:
   - |
     echo '
       FROM node:alpine
-      RUN npm install -g wol-helper
+      RUN set -eux; \
+          npm install -g wol-helper; \
+          mkdir -p /usr/local/etc
       CMD ["wol-helper", "/usr/local/etc/wol-helper.json"]
     ' | docker build -t $DOCKERHUB_USERNAME/wol-helper -
 - name: push
