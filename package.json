@@ -1,6 +1,7 @@
 {
   "name": "wol-helper",
-  "version": "0.2.2",
+  "type": "module",
+  "version": "0.3.0",
   "description": "Perform Wake-on-LAN remotely with a web interface.",
   "main": "index.mjs",
   "repository": {
@@ -26,7 +27,7 @@
   },
   "homepage": "https://github.com/hehongbo/wol-helper#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.18.1",
     "joi": "^17.6.0"
   }
 }

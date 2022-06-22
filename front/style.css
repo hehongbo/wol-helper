@@ -14,24 +14,34 @@ div#machine-list-operations {
     text-align: right;
 }
 
-table#machine-list {
-    background-color: white;
+div#machine-list-table {
     margin: 0.5rem auto;
     width: 100%;
     max-width: 900px;
-    min-width: 600px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+div#machine-list-table::-webkit-scrollbar {
+    display: none;
+}
+
+table#machine-list {
+    background-color: white;
+    width: 100%;
+    min-width: 700px;
     border-collapse: separate;
     border-spacing: 0;
 }
 
 table#machine-list > thead th:nth-child(1),
 table#machine-list > thead th:nth-child(4) {
-    width: 20%;
+    width: 22%;
 }
 
 table#machine-list > thead th:nth-child(2),
 table#machine-list > thead th:nth-child(3) {
-    width: 30%;
+    width: 28%;
 }
 
 table#machine-list > thead th {

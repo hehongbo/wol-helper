@@ -13,18 +13,20 @@
     <a class="operation-link" id="op-add" href="javascript:addMachine()">Add</a>
     <a class="operation-link" id="op-edit" href="javascript:toggleEdit()">Edit</a>
 </div>
-<table id="machine-list" data-operation-status="wake">
-    <thead>
-    <tr>
-        <th scope="col">Name</th>
-        <th scope="col">MAC Address <span class="required">*</span></th>
-        <th scope="col">IP Address</th>
-        <th scope="col">Wake</th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+<div id="machine-list-table">
+    <table id="machine-list" data-operation-status="wake">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">MAC Address <span class="required">*</span></th>
+            <th scope="col">IP Address</th>
+            <th scope="col">Wake</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 <script src="wol-helper.js"></script>
 </body>
 </html>
